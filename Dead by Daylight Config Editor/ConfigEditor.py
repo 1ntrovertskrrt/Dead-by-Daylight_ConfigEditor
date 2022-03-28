@@ -1,4 +1,4 @@
-# SSL Bypass Installer for Dead By Daylight
+#Config Editor for Dead By Daylight
 # Auth 1ntrovertskrrt
 
 
