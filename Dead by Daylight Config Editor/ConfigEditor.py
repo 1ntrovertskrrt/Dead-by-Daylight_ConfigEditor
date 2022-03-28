@@ -2,8 +2,6 @@
 # Auth 1ntrovertskrrt
 
 
-#import sys
-#import re
 import os
 import time
 from pathlib import Path
@@ -13,23 +11,22 @@ home = str(Path.home())
 def readConfigFileSteam(Engine): # Read Engine.ini file
 
     list = []
-    file = open(r"C:\Users\Administrator\AppData\Local\DeadByDaylight\Saved\Config\WindowsNoEditor\Engine.ini")
+    with open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini", "a") as file:
 
-    for value in file:
-        list.append(value.rstrip('\r\n'))
-    file.close()
+        for value in file:
+            list.append(value.rstrip('\r\n'))
     return list
 
 def writeConfigFileSteam(Engine): # Add SSL Bypass into Engine.ini
     with open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini", "a") as file:
         file.write("\n[/Script/Engine.NetworkSettings] \nn.VerifyPeer=False")
-        file.close()
+        
     return
 
 def removeConfigFilesSteam(Engine): # This Function for Remove the SSL Bypass and replace fresh engine.ini
     with open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini", "w") as file:
         file.write("[Core.System] \nPaths=../../../Engine/Content \nPaths=%GAMEDIR%Content \nPaths=../../../Engine/Plugins/Runtime/Bhvr/MirrorsAnalytics/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/OnlinePresence/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/PlatformsProviders/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/VersionNumber/Content \nPaths=../../../Engine/Plugins/Experimental/RemoteSession/Content \nPaths=../../../Engine/Plugins/Runtime/HoudiniEngine/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Substance/Content \nPaths=../../../Engine/Plugins/Enterprise/StaticMeshEditorExtension/Content \nPaths=../../../Engine/Plugins/Editor/MeshEditor/Content \nPaths=../../../Engine/Plugins/Experimental/GeometryCollectionPlugin/Content \nPaths=../../../Engine/Plugins/Experimental/ChaosSolverPlugin/Content \nPaths=../../../Engine/Plugins/Enterprise/DataprepEditor/Content \nPaths=../../../Engine/Plugins/Enterprise/DatasmithContent/Content \nPaths=../../../Engine/Plugins/Experimental/ModelingToolsEditorMode/Content \nPaths=../../../Engine/Plugins/Experimental/MeshModelingToolset/Content \nPaths=../../../Engine/Plugins/Experimental/GeometryProcessing/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/DBDUICore/Content \nPaths=../../../DeadByDaylight/Plugins/Wwise/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/DBDUIMobile/Content \nPaths=../../../Engine/Plugins/2D/Paper2D/Content \nPaths=../../../Engine/Plugins/Developer/TraceSourceFiltering/Content \nPaths=../../../Engine/Plugins/FX/Niagara/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/SentryIo/Content \nPaths=../../../Engine/Plugins/Developer/AnimationSharing/Content \nPaths=../../../Engine/Plugins/Editor/GeometryMode/Content \nPaths=../../../Engine/Plugins/Experimental/ChaosClothEditor/Content \nPaths=../../../Engine/Plugins/Experimental/ChaosNiagara/Content \nPaths=../../../Engine/Plugins/Media/MediaCompositing/Content \nPaths=../../../Engine/Plugins/MovieScene/MovieRenderPipeline/Content")
-        file.close()
+        
     return
 
 def writeLowestGraphics(Engine): # This Function for adding Lowest Graphics Config to Engine.ini
@@ -78,13 +75,13 @@ n.VerifyPeer=False
 
 
         """)
-        file.close()
+        
         return 
 
 def removeAllConfigs(Engine): # Remove all configs
     with open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini", "w") as file:
         file.write("[Core.System] \nPaths=../../../Engine/Content \nPaths=%GAMEDIR%Content \nPaths=../../../Engine/Plugins/Runtime/Bhvr/MirrorsAnalytics/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/OnlinePresence/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/PlatformsProviders/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/VersionNumber/Content \nPaths=../../../Engine/Plugins/Experimental/RemoteSession/Content \nPaths=../../../Engine/Plugins/Runtime/HoudiniEngine/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Substance/Content \nPaths=../../../Engine/Plugins/Enterprise/StaticMeshEditorExtension/Content \nPaths=../../../Engine/Plugins/Editor/MeshEditor/Content \nPaths=../../../Engine/Plugins/Experimental/GeometryCollectionPlugin/Content \nPaths=../../../Engine/Plugins/Experimental/ChaosSolverPlugin/Content \nPaths=../../../Engine/Plugins/Enterprise/DataprepEditor/Content \nPaths=../../../Engine/Plugins/Enterprise/DatasmithContent/Content \nPaths=../../../Engine/Plugins/Experimental/ModelingToolsEditorMode/Content \nPaths=../../../Engine/Plugins/Experimental/MeshModelingToolset/Content \nPaths=../../../Engine/Plugins/Experimental/GeometryProcessing/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/DBDUICore/Content \nPaths=../../../DeadByDaylight/Plugins/Wwise/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/DBDUIMobile/Content \nPaths=../../../Engine/Plugins/2D/Paper2D/Content \nPaths=../../../Engine/Plugins/Developer/TraceSourceFiltering/Content \nPaths=../../../Engine/Plugins/FX/Niagara/Content \nPaths=../../../DeadByDaylight/Plugins/Runtime/Bhvr/SentryIo/Content \nPaths=../../../Engine/Plugins/Developer/AnimationSharing/Content \nPaths=../../../Engine/Plugins/Editor/GeometryMode/Content \nPaths=../../../Engine/Plugins/Experimental/ChaosClothEditor/Content \nPaths=../../../Engine/Plugins/Experimental/ChaosNiagara/Content \nPaths=../../../Engine/Plugins/Media/MediaCompositing/Content \nPaths=../../../Engine/Plugins/MovieScene/MovieRenderPipeline/Content")
-        file.close()
+        
     return
 
 def writeFPSOptimizer(Engine):
@@ -139,7 +136,7 @@ r.ParticleLightQuality=0
 n.VerifyPeer=False
 
          """)
-        file.close()
+        
         return
 
 
