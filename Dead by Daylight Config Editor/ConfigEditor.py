@@ -11,7 +11,7 @@ home = str(Path.home())
 def readConfigFileSteam(Engine): # Read Engine.ini file
 
     list = []
-    with open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini", "a") as file:
+    with open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini", "r") as file:
 
         for value in file:
             list.append(value.rstrip('\r\n'))
