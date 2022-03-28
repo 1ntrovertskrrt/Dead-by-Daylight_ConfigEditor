@@ -207,7 +207,7 @@ while command != "5":
             os.system("cls")
             menu()
 
-        if command == "2":
+        if command == "2": # adding FPS Optimizer Config
             time.sleep(2)
             addFPSOptimizer = writeFPSOptimizer("Engine.ini")
             print("FPS Optimizer Config has been installed!")
@@ -223,7 +223,7 @@ while command != "5":
             os.system("cls")
             menu()
 
-        if command == "9":
+        if command == "9": # back
             menu()
         
     if command == "4": # Remove all configs and reset to default
@@ -234,5 +234,5 @@ while command != "5":
         os.system("cls")
         menu()
 
-    if command =="5": # program closed
+    if command == "5": # program closed
         break
