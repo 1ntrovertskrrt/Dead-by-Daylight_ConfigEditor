@@ -31,13 +31,24 @@ def writeLowestGraphicsEGS():  # Add Lowend Graphics
             secondfile.write(line)
     return
 
-def writeSSLFOVEGS():  # Add SSL+FOV 
+def writeFOVEGS():  # Add SSL+FOV 
 
-    with open('Resources\SSL+FOV.ini','r') as firstfile, open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\EGS\Engine.ini",'a') as secondfile:
+    input = open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\EGS\Engine.ini",'rt')
+
+    Output = open("Resources\\dump.ini",'at')
+
+    for line in input:
+        Output.write(line.replace("[/Script/Engine.NetworkSettings]", "").replace("n.VerifyPeer=False", ""))
+
+    input.close()
+    Output.close()
+
+    with open('Resources\FOV.ini','r') as firstfile, open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\EGS\Engine.ini",'a') as secondfile:
         # read content from first file
         for line in firstfile:
             # append content to second file
             secondfile.write(line)
+    return
     return
 
 def writeWallhackEGS():  # Add Wallhack
