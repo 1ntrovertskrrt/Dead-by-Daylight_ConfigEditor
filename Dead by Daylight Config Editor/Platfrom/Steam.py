@@ -36,7 +36,7 @@ def writeFOVSteam():  # Add SSL+FOV
 
     input = open(f"{home}\AppData\Local\DeadbyDaylight\Saved\Config\WindowsNoEditor\Engine.ini",'rt')
 
-    Output = open("Resources\\backup.ini",'at')
+    Output = open("Resources\\dump.ini",'at')
 
     for line in input:
         Output.write(line.replace("[/Script/Engine.NetworkSettings]", "").replace("n.VerifyPeer=False", ""))
