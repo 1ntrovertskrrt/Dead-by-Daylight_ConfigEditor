@@ -1,4 +1,4 @@
-# Dead-by-Daylight_ConfigEditor
+# Read Before Use!
 
 No Ban Chance for using Config Editor
 
